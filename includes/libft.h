@@ -6,7 +6,7 @@
 /*   By: padelord <padelord@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 19:10:15 by padelord          #+#    #+#             */
-/*   Updated: 2018/11/06 23:40:24 by padelord         ###   ########.fr       */
+/*   Updated: 2018/11/07 01:28:16 by padelord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,7 @@ void	ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void	ft_lstadd(t_list **alst, t_list *new);
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+
+int		ft_isspace(int c);
 
 #endif

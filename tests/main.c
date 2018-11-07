@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: padelord <padelord@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/07 00:14:22 by padelord          #+#    #+#             */
-/*   Updated: 2018/11/07 00:15:01 by padelord         ###   ########.fr       */
+/*   Created: 2018/11/07 01:40:23 by padelord          #+#    #+#             */
+/*   Updated: 2018/11/07 01:40:59 by padelord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int nb)
+int	main(int ac, char **av)
 {
-	ft_putnbr_fd(nb, 1);
+	if (ac == 2)
+		ft_putnbr(ft_atoi(av[1]));
 }

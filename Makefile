@@ -6,7 +6,7 @@
 #    By: padelord <padelord@gmail.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/05 18:58:28 by padelord          #+#    #+#              #
-#    Updated: 2018/11/06 21:33:05 by padelord         ###   ########.fr        #
+#    Updated: 2018/11/07 01:33:44 by padelord         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -75,7 +75,8 @@ SRCBONUS=	ft_lstnew.c		\
 			ft_lstdel.c		\
 			ft_lstadd.c		\
 			ft_lstiter.c	\
-			ft_lstmap.c
+			ft_lstmap.c		\
+			ft_isspace.c
 
 SRCNAME	=	$(SRCPART1)		\
 			$(SRCPART2)		\
