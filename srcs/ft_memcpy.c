@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: padelord <padelord@gmail.com>              +#+  +:+       +#+        */
+/*   By: padelord <padelord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 22:43:25 by padelord          #+#    #+#             */
-/*   Updated: 2018/11/06 23:26:27 by padelord         ###   ########.fr       */
+/*   Updated: 2018/11/08 03:31:43 by padelord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	char	*cdst;
-	char	*csrc;
+	unsigned char	*cdst;
+	unsigned char	*csrc;
 	size_t	i;
 
-	if (dst == 0 || src == 0)
+	if (!dst || !src)
 		return (0);
-	cdst = (char *)dst;
-	csrc = (char *)src;
+	cdst = (unsigned char *)dst;
+	csrc = (unsigned char *)src;
 	i = 0;
 	while (i < n)
 	{

@@ -6,7 +6,7 @@
 #    By: padelord <padelord@gmail.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/07 01:36:23 by padelord          #+#    #+#              #
-#    Updated: 2018/11/07 01:48:42 by padelord         ###   ########.fr        #
+#    Updated: 2018/11/08 01:58:08 by padelord         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -18,7 +18,7 @@ OBJ		=	$(SRC:.c=.o)
 
 LDFLAGS	=	-lft -L./..
 
-CFLAGS	=	-Wall -Wextra -I./../includes/
+CFLAGS	=	-Wall -Wextra -I./../includes/ -g3
 
 $(NAME): all
 
@@ -27,6 +27,7 @@ all: $(OBJ)
 
 lib:
 	make re -C ../
+	make
 
 clean: 
 	rm -rf $(OBJ)

@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: padelord <padelord@student.42.fr>          +#+  +:+       +#+        */
+/*   By: padelord <padelord@gmail.com>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/06 23:39:51 by padelord          #+#    #+#             */
-/*   Updated: 2018/11/08 03:34:51 by padelord         ###   ########.fr       */
+/*   Created: 2018/11/07 01:40:23 by padelord          #+#    #+#             */
+/*   Updated: 2018/11/07 18:51:35 by padelord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int	main(int ac, char **av)
 {
-	size_t	i;
-
-	if (!s)
-		return (0);
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	
 }
