@@ -12,7 +12,10 @@
 
 NAME	=	testlib
 
-SRC		=	main.c
+CC	=	clang
+
+SRC		=	main.c	\
+			../wip/ft_putstr_color.c
 
 OBJ		=	$(SRC:.c=.o)
 
@@ -23,7 +26,7 @@ CFLAGS	=	-Wall -Wextra -I./../includes/ -g3
 $(NAME): all
 
 all: $(OBJ)
-	gcc $(OBJ) -o $(NAME) -L./.. -lft
+	$(CC) $(OBJ) -o $(NAME) -L./.. -lft
 
 lib:
 	make re -C ../

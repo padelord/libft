@@ -76,7 +76,10 @@ SRCBONUS=	ft_lstnew.c		\
 			ft_lstadd.c		\
 			ft_lstiter.c	\
 			ft_lstmap.c		\
-			ft_isspace.c
+			ft_isspace.c	\
+			ft_putstr_color.c	\
+			ft_strrev.c		\
+			ft_cswap.c
 
 SRCNAME	=	$(SRCPART1)		\
 			$(SRCPART2)		\

@@ -16,7 +16,7 @@ int		ft_atoi(const char *str)
 {
 	size_t	i;
 	int		sign;
-	int		nb;
+	unsigned int	nb;
 
 	i = 0;
 	while (str[i] && ft_isspace(str[i]))
@@ -31,5 +31,5 @@ int		ft_atoi(const char *str)
 		nb += str[i] - '0';
 		i++;
 	}
-	return (sign * nb);
+	return (nb * sign);
 }

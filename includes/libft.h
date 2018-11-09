@@ -15,6 +15,31 @@
 
 # include <string.h>
 
+/*
+**	Color defines :
+*/
+# ifndef C_DATA
+#  define C_DATA
+
+#  define C_BLACK "0;0;0"
+#  define C_WHITE "255;255;255"
+#  define C_RED "255;0;0"
+#  define C_GREEN "0;255;0"
+#  define C_BLUE "0;0;255"
+#  define C_GIRLY "255;125;200"
+#  define C_YELLOW "255;255;0"
+#  define C_PINK "255;0;255"
+#  define C_CYAN "0;255;255"
+#  define C_RANDOM "0;255;255"
+
+#  define C_RESET "0"
+#  define C_BOLD "1"
+#  define C_FAINT "2"
+#  define C_ITALIC "3"
+#  define C_ULINE "4"
+#  define C_BLINK "5"
+# endif
+
 typedef	struct	s_list
 {
 	void			*content;
@@ -84,5 +109,9 @@ void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 int		ft_isspace(int c);//done
+void	ft_putstr_color(char *str, const char *attr, const char *fg, const char *bg);
+void	ft_putendl_color(char *str, const char *attr, const char *fg, const char *bg);
+void	ft_cswap(char *a, char *b);
+char	*ft_strrev(char *str);
 
 #endif
