@@ -3,12 +3,15 @@
 
 void	ft_putstr_color(char *str, const char *attr, const char *fg, const char *bg)
 {
+  char	buffer[39];
+
+  ft_bzero((void *)buffer, 39);
   ft_putstr("\e[");
   ft_putstr(attr);
   ft_putstr(";38;2;");
-  ft_putstr(fg);
+  ft_putstr(fg);//20 char max
   ft_putstr(";48;2;");
-  ft_putstr(bg);
+  ft_putstr(bg);//37
   ft_putchar('m');
   ft_putstr(str);
   ft_putstr("\e[0;39;49m");

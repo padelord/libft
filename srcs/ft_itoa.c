@@ -2,6 +2,8 @@
 
 char	*ft_itoa(int nb)
 {
+  return (ft_strdup(ft_staticitoa(nb)));
+  /*
   char	*dest;
   unsigned int	n;
   size_t	i;
@@ -21,4 +23,5 @@ char	*ft_itoa(int nb)
   if (nb == 0)
     dest[0] = '0';
   return (dest);
+  */
 }

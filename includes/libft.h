@@ -18,6 +18,7 @@
 /*
 **	Color defines :
 */
+
 # ifndef C_DATA
 #  define C_DATA
 
@@ -57,15 +58,15 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);//done
 size_t	ft_strlen(const char *s);//done
 char	*ft_strdup(const char *s1);//done
 char	*ft_strcpy(char *dst, const char *src);//done
-char	*ft_strncpy(char *dst, const char *src, size_t len);
-char	*ft_strcat(char *s1, const char *s2);
-char	*ft_strncat(char *s1, const char *s2, size_t n);
+char	*ft_strncpy(char *dst, const char *src, size_t len);//done
+char	*ft_strcat(char *s1, const char *s2);//done
+char	*ft_strncat(char *s1, const char *s2, size_t n); //done
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
-char	*ft_strchr(const char *s, int c);
-char	*ft_strrchr(const char *s, int c);
-char	*ft_strstr(const char *haystack, const char *needle);
+char	*ft_strchr(const char *s, int c);//done
+char	*ft_strrchr(const char *s, int c);//done
+char	*ft_strstr(const char *haystack, const char *needle);//done
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
-int		ft_strcmp(const char *s1, const char *s2);
+int		ft_strcmp(const char *s1, const char *s2);//done
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_atoi(const char *str);//done
 int		ft_isalpha(int c);//done
@@ -80,7 +81,7 @@ void	*ft_memalloc(size_t size);//done
 void	ft_memdel(void **ap);//done
 char	*ft_strnew(size_t size);//done
 void	ft_strdel(char **as);
-void	ft_strclr(char *s);
+void	ft_strclr(char *s);//done
 void	ft_striter(char *s, void (*f)(char *));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 char	*ft_strmap(char const *s, char (*f)(char));
@@ -91,7 +92,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s);
 char	**ft_strsplit(char const *s, char c);
-char	*ft_itoa(int n);
+char	*ft_itoa(int n);//done
 void	ft_putchar(char c);//done
 void	ft_putstr(char const *s);//done
 void	ft_putendl(char const *s);//done
@@ -113,5 +114,8 @@ void	ft_putstr_color(char *str, const char *attr, const char *fg, const char *bg
 void	ft_putendl_color(char *str, const char *attr, const char *fg, const char *bg);
 void	ft_cswap(char *a, char *b);
 char	*ft_strrev(char *str);
+int	ft_iswspace(int c);
+char	*ft_staticitoa(int nb);
+void	*ft_memdup(void *dst, const void *src, size_t n);
 
 #endif

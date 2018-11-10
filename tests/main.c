@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 #include "libft.h"
-
+/*
 #ifndef C_DATA
 # define C_DATA
 
@@ -35,7 +35,7 @@
 # define C_BLINK "5"
 
 #endif
-
+*/
 typedef	struct	s_termc
 {
   int		r;
@@ -66,7 +66,7 @@ int	main(int ac, char **av)
 	ft_putendl_color("YELLOW", C_RESET, C_YELLOW, C_BLACK);
 	ft_putendl_color("PINK", C_RESET, C_PINK, C_BLACK);
 	ft_putendl_color("CYAN", C_RESET, C_CYAN, C_BLACK);
-	ft_putendl_color("RANDOM", C_ULINE, C_BLACK, C_GIRLY);
+	ft_putendl_color("RANDOM", C_BLINK, C_BLACK, C_GIRLY);
 	ft_strrev(str);
 	ft_putendl(str);
 	free(str);
@@ -78,4 +78,5 @@ int	main(int ac, char **av)
 	ft_putnbr(nb);
 	ft_putendl("");
 	free(str);
+	ft_putendl(ft_staticitoa(nb));
 }
