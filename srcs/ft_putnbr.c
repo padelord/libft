@@ -6,7 +6,7 @@
 /*   By: padelord <padelord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 00:14:22 by padelord          #+#    #+#             */
-/*   Updated: 2018/11/08 03:44:12 by padelord         ###   ########.fr       */
+/*   Updated: 2018/11/10 20:13:51 by padelord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 void	ft_putnbr(int nb)
 {
-  ft_putstr(ft_staticitoa(nb));
-  //ft_putnbr_fd(nb, 1);
+	ft_putstr(ft_staticitoa(nb));
 }

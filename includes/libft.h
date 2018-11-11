@@ -6,7 +6,7 @@
 /*   By: padelord <padelord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 02:53:09 by padelord          #+#    #+#             */
-/*   Updated: 2018/11/08 03:38:26 by padelord         ###   ########.fr       */
+/*   Updated: 2018/11/11 23:52:56 by padelord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <string.h>
 
+# define BUFF_SIZE 32
 /*
 **	Color defines :
 */
@@ -41,12 +42,14 @@
 #  define C_BLINK "5"
 # endif
 
-typedef	struct	s_list
+typedef	struct s_list	t_list;
+
+struct	s_list
 {
-	void			*content;
-	size_t			content_size;
-	struct s_list	*next;
-}				t_list;
+	void	*content;
+	size_t	content_size;
+	t_list	*next;
+};
 
 void	*ft_memset(void *b, int c, size_t len);//done
 void	ft_bzero(void *s, size_t n);//done
@@ -61,13 +64,13 @@ char	*ft_strcpy(char *dst, const char *src);//done
 char	*ft_strncpy(char *dst, const char *src, size_t len);//done
 char	*ft_strcat(char *s1, const char *s2);//done
 char	*ft_strncat(char *s1, const char *s2, size_t n); //done
-size_t	ft_strlcat(char *dst, const char *src, size_t size);
+size_t	ft_strlcat(char *dst, const char *src, size_t size); 
 char	*ft_strchr(const char *s, int c);//done
 char	*ft_strrchr(const char *s, int c);//done
 char	*ft_strstr(const char *haystack, const char *needle);//done
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_strcmp(const char *s1, const char *s2);//done
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);//done
 int		ft_atoi(const char *str);//done
 int		ft_isalpha(int c);//done
 int		ft_isdigit(int c);//done
@@ -114,7 +117,7 @@ void	ft_putstr_color(char *str, const char *attr, const char *fg, const char *bg
 void	ft_putendl_color(char *str, const char *attr, const char *fg, const char *bg);
 void	ft_cswap(char *a, char *b);
 char	*ft_strrev(char *str);
-int	ft_iswspace(int c);
+int		ft_iswspace(int c);
 char	*ft_staticitoa(int nb);
 void	*ft_memdup(void *dst, const void *src, size_t n);
 

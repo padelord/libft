@@ -6,7 +6,7 @@
 /*   By: padelord <padelord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 00:50:27 by padelord          #+#    #+#             */
-/*   Updated: 2018/11/08 03:44:48 by padelord         ###   ########.fr       */
+/*   Updated: 2018/11/10 21:22:51 by padelord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,4 @@ char	*ft_strcat(char *s1, const char *s2)
     }
   s1[len + i] = '\0';
   return (s1);
-  //revoir
-  /*
-  if (!s1 || !s2)
-		return (0);
-	ft_strcpy(s1 + ft_strlen(s1), s2);
-	return (s1);
-  */
 }

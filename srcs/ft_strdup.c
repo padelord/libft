@@ -6,7 +6,7 @@
 /*   By: padelord <padelord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 00:23:50 by padelord          #+#    #+#             */
-/*   Updated: 2018/11/08 03:45:06 by padelord         ###   ########.fr       */
+/*   Updated: 2018/11/10 20:02:49 by padelord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 char	*ft_strdup(const char *s1)
 {
-  return ((!s1) ? 0 : ft_strcpy(ft_strnew(ft_strlen(s1)), s1));
+	return ((!s1) ? 0 : ft_strcpy(ft_strnew(ft_strlen(s1)), s1));
 }
