@@ -64,11 +64,11 @@ char	*ft_strcpy(char *dst, const char *src);//done
 char	*ft_strncpy(char *dst, const char *src, size_t len);//done
 char	*ft_strcat(char *s1, const char *s2);//done
 char	*ft_strncat(char *s1, const char *s2, size_t n); //done
-size_t	ft_strlcat(char *dst, const char *src, size_t size); 
+size_t	ft_strlcat(char *dst, const char *src, size_t size);//done
 char	*ft_strchr(const char *s, int c);//done
 char	*ft_strrchr(const char *s, int c);//done
 char	*ft_strstr(const char *haystack, const char *needle);//done
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);//done
 int		ft_strcmp(const char *s1, const char *s2);//done
 int		ft_strncmp(const char *s1, const char *s2, size_t n);//done
 int		ft_atoi(const char *str);//done
@@ -83,11 +83,11 @@ int		ft_tolower(int c);//done
 void	*ft_memalloc(size_t size);//done
 void	ft_memdel(void **ap);//done
 char	*ft_strnew(size_t size);//done
-void	ft_strdel(char **as);
+void	ft_strdel(char **as);//done
 void	ft_strclr(char *s);//done
-void	ft_striter(char *s, void (*f)(char *));
-void	ft_striteri(char *s, void (*f)(unsigned int, char *));
-char	*ft_strmap(char const *s, char (*f)(char));
+void	ft_striter(char *s, void (*f)(char *));//done
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));//done
+char	*ft_strmap(char const *s, char (*f)(char));//done
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int		ft_strequ(char const *s1, char const *s2);
 int		ft_strnequ(char const *s1, char const *s2, size_t n);

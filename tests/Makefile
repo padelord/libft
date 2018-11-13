@@ -15,7 +15,8 @@ NAME	=	testlib
 CC	=	clang
 
 SRC		=	main.c	\
-			../wip/ft_putstr_color.c
+			../wip/ft_putstr_color.c	\
+			strlcat.c
 
 OBJ		=	$(SRC:.c=.o)
 
