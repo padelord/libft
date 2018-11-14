@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-/*
+
 void	*ft_memdup(const void *src, size_t n)
 {
   void	*dst;
@@ -20,6 +20,6 @@ void	*ft_memdup(const void *src, size_t n)
   if (!(dst = ft_memalloc(n)))
     return (0);
   ft_memcpy(dst, src, n);
-  
+  return (dst);
 }
-*/
+

@@ -33,10 +33,47 @@ void	ft_putnstr(const char *str, size_t n)
   write(1, str, (ft_strlen(str) < n) ? ft_strlen(str) : n);
 }
 
+void	ft_wtabdel(char **tab)
+{
+  size_t	i;
+
+  i = 0;
+  while (tab[i])
+    {
+      ft_strdel(tab + i);
+      i++;
+    }
+  free(tab);
+}
+
 int	main(int ac, char **av)
 {
-  char	*str;
+  char	**tab;
+  size_t	i;
+
+  if (ac < 2)
+    return (1);
+  if (!(tab = ft_strsplit(av[1], ' ')))
+    return (0);
+  i = 0;
+  while (tab[i])
+    ft_putendl(tab[i++]);
+  ft_wtabdel(tab);
+  /*
+    t_list	*buffer;
+
+  buffer = ft_lstnew("coucou", 6);
+  ft_lstadd(&buffer, ft_lstnew("salut", 5));
+  ft_putendl(
 
   str = ft_strmap("Coucou", ft_toupper);
   ft_putendl(str);
+  free(str);
+  str = ft_strsub("Salut les copains", 6, 3);
+  ft_putendl(str);
+  free(str);
+  str = ft_strtrim("     Coucou les copains     ");
+  ft_putendl(str);
+  free(str);
+  */
 }
