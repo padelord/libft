@@ -14,6 +14,15 @@
 #include <unistd.h>
 #include "libft.h"
 
+void	ft_displaylstr(t_list *t)
+{
+	while (t)
+	{
+		write(1, t->content, t->content_size);
+		t = t->next;
+	}
+}
+
 size_t	ft_min(size_t n1, size_t n2)
 {
   return ((n1 < n2) ? n1 : n2);
@@ -46,26 +55,23 @@ void	ft_wtabdel(char **tab)
   free(tab);
 }
 
+void	*ft_del(void *s, size_t n)
+{
+	ft_bzero(s, n);
+	free(s);
+}
+
 int	main(int ac, char **av)
 {
-  char	**tab;
-  size_t	i;
-
-  if (ac < 2)
-    return (1);
-  if (!(tab = ft_strsplit(av[1], ' ')))
-    return (0);
-  i = 0;
-  while (tab[i])
-    ft_putendl(tab[i++]);
-  ft_wtabdel(tab);
-  /*
     t_list	*buffer;
 
-  buffer = ft_lstnew("coucou", 6);
-  ft_lstadd(&buffer, ft_lstnew("salut", 5));
-  ft_putendl(
-
+	buffer = 0;
+	
+	ft_lstadd(&buffer, ft_lstnew("coucou", 6));
+	ft_lstadd(&buffer, ft_lstnew("salut", 5));
+	ft_displaylstr(buffer);
+	ft_lstdel(&buffer, ft_del);
+/*
   str = ft_strmap("Coucou", ft_toupper);
   ft_putendl(str);
   free(str);
@@ -75,5 +81,5 @@ int	main(int ac, char **av)
   str = ft_strtrim("     Coucou les copains     ");
   ft_putendl(str);
   free(str);
-  */
+*/
 }

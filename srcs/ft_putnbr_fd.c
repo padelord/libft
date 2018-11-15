@@ -14,5 +14,5 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-  ft_putstr_fd(ft_staticitoa(n), fd);
+	ft_putstr_fd(ft_staticitoa(n), fd);
 }

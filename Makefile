@@ -94,7 +94,7 @@ OBJS	=	$(SRCS:.c=.o)
 
 INCLUDE	=	includes/
 
-CFLAGS	=	-Wall -Wextra -I./$(INCLUDE)
+CFLAGS	=	-Wall -Wextra -I./$(INCLUDE) -g3
 
 all: $(NAME)
 

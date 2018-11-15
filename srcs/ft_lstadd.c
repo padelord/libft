@@ -2,10 +2,16 @@
 
 void	ft_lstadd(t_list **alst, t_list *new)
 {
-  t_list	*t;
+	t_list	*t;
 
-  t = *alst;
-  while (t->next)
-    t = t->next;
-  t->next = new;
+	if (*alst == 0)
+	{
+		*alst = new;
+		(*alst)->next = 0;
+		return ;
+	}
+	t = *alst;
+	while (t->next)
+		t = t->next;
+	t->next = new;
 }
