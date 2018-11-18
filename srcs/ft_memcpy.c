@@ -6,7 +6,7 @@
 /*   By: padelord <padelord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 22:43:25 by padelord          #+#    #+#             */
-/*   Updated: 2018/11/10 21:25:14 by padelord         ###   ########.fr       */
+/*   Updated: 2018/11/18 23:37:49 by padelord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	unsigned char	*cdst;
 	unsigned char	*csrc;
-	size_t	i;
+	size_t			i;
 
 	if (!dst || !src)
 		return (0);

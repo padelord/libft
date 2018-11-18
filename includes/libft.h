@@ -6,7 +6,7 @@
 /*   By: padelord <padelord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 02:53:09 by padelord          #+#    #+#             */
-/*   Updated: 2018/11/11 23:52:56 by padelord         ###   ########.fr       */
+/*   Updated: 2018/11/19 00:03:58 by padelord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,8 +113,10 @@ void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 int		ft_isspace(int c);//done
-void	ft_putstr_color(char *str, const char *attr, const char *fg, const char *bg);
-void	ft_putendl_color(char *str, const char *attr, const char *fg, const char *bg);
+void	ft_putstr_color(const char *str, const char *attr, const char *fg,
+						const char *bg);
+void	ft_putendl_color(const char *str, const char *attr, const char *fg,
+						const char *bg);
 void	ft_cswap(char *a, char *b);
 char	*ft_strrev(char *str);
 int		ft_iswspace(int c);

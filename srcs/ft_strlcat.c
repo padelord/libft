@@ -6,7 +6,7 @@
 /*   By: padelord <padelord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 23:56:43 by padelord          #+#    #+#             */
-/*   Updated: 2018/11/11 17:11:16 by padelord         ###   ########.fr       */
+/*   Updated: 2018/11/19 00:02:35 by padelord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,13 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 	len_dst = ft_strlen(dst);
 	i = 0;
-	while (i + len_dst < size - 1 && src[i])
-    {
+	while (src[i] && i + len_dst < size - 1)
+	{
 		dst[len_dst + i] = src[i];
 		i++;
-    }
+	}
 	dst[len_dst + i] = '\0';
-	return ((size < len_dst) ? ft_strlen(src) + size : len_dst + ft_strlen(src));
+	if (size < len_dst)
+		return (ft_strlen(src) + size);
+	return (len_dst + ft_strlen(src));
 }
-

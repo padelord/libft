@@ -6,7 +6,7 @@
 /*   By: padelord <padelord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 20:12:31 by padelord          #+#    #+#             */
-/*   Updated: 2018/11/10 20:12:33 by padelord         ###   ########.fr       */
+/*   Updated: 2018/11/18 23:32:31 by padelord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,3 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	dest->next = 0;
 	return (dest);
 }
-

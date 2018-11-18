@@ -6,7 +6,7 @@
 /*   By: padelord <padelord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 19:30:03 by padelord          #+#    #+#             */
-/*   Updated: 2018/11/08 03:33:08 by padelord         ###   ########.fr       */
+/*   Updated: 2018/11/18 23:37:27 by padelord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*t;
-	size_t	i;
+	size_t			i;
 
 	t = (unsigned char *)s;
 	i = 0;

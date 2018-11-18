@@ -6,7 +6,7 @@
 /*   By: padelord <padelord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 00:46:33 by padelord          #+#    #+#             */
-/*   Updated: 2018/11/08 03:45:20 by padelord         ###   ########.fr       */
+/*   Updated: 2018/11/18 23:47:35 by padelord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ char	*ft_strncpy(char *dst, const char *src, size_t len)
 		return (0);
 	i = 0;
 	while (i < len && src[i])
-    {
+	{
 		dst[i] = src[i];
 		i++;
-    }
+	}
 	while (i < len)
 		dst[i++] = '\0';
 	return (dst);
