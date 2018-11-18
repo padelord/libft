@@ -14,38 +14,15 @@
 #include <unistd.h>
 #include "libft.h"
 
-void	ft_displaylstr(t_list *t)
-{
-	while (t)
-	{
-		write(1, t->content, t->content_size);
-		t = t->next;
-	}
-}
-
-size_t	ft_min(size_t n1, size_t n2)
-{
-  return ((n1 < n2) ? n1 : n2);
-}
-
-void	ft_putnchar(char c, size_t len)
-{
-  char	buff[BUFF_SIZE];
-
-  memset(buff, c, BUFF_SIZE);
-  while (len > 0)
-    len -= write(1, buff, ((len > BUFF_SIZE) ? BUFF_SIZE : len));
-}
-
-void	ft_putnstr(const char *str, size_t n)
-{
-  write(1, str, (ft_strlen(str) < n) ? ft_strlen(str) : n);
-}
+typedef int	t_vec3 __attribute__
+((ext_vector_type(3)));
 
 void	ft_wtabdel(char **tab)
 {
   size_t	i;
 
+  if (tab == 0)
+	  return ;
   i = 0;
   while (tab[i])
     {
@@ -55,31 +32,68 @@ void	ft_wtabdel(char **tab)
   free(tab);
 }
 
-void	*ft_del(void *s, size_t n)
+void	ft_print_wtab(char **tab)
 {
-	ft_bzero(s, n);
-	free(s);
+	while (*tab)
+		ft_putendl(*tab++);
+}
+/*
+char	*ft_getfile(char *path)
+{
+	int	fd;
+	char	buffer[BUFF_SIZE];
+	size_t	size;
+
+	fd = open(path, O_RDONLY);
+	if (fd == -1)
+		return (0);
+	
+}
+*/
+
+void	ft_termclr()
+{
+	ft_putstr("\033[2J");
+}
+
+void	ft_cursmove(size_t x, size_t y)
+{
+	char	*buffer[25];
+
+	*buffer = 0;
+	ft_strcat((char *)buffer, "\033[");
+	ft_strcat((char *)buffer, ft_staticitoa(x));
+	ft_strcat((char *)buffer, ";");
+	ft_strcat((char *)buffer, ft_staticitoa(y));
+	ft_strcat((char *)buffer, "H");
+	ft_putstr((char *)buffer);
 }
 
 int	main(int ac, char **av)
 {
-    t_list	*buffer;
+	char	**tab;
 
-	buffer = 0;
-	
-	ft_lstadd(&buffer, ft_lstnew("coucou", 6));
-	ft_lstadd(&buffer, ft_lstnew("salut", 5));
-	ft_displaylstr(buffer);
-	ft_lstdel(&buffer, ft_del);
+	t_vec3	point;
+
+	point = 0;
+	point.x = 1;
+	point.z = -1;
+	point *= 2;
+	ft_putnbr(point.x);
+	ft_putchar('\n');
+	ft_putnbr(point.y);
+	ft_putchar('\n');
+	ft_putnbr(point.z);
+	ft_putchar('\n');
 /*
-  str = ft_strmap("Coucou", ft_toupper);
-  ft_putendl(str);
-  free(str);
-  str = ft_strsub("Salut les copains", 6, 3);
-  ft_putendl(str);
-  free(str);
-  str = ft_strtrim("     Coucou les copains     ");
-  ft_putendl(str);
-  free(str);
+	ft_cursmove(10, 40);
+	ft_putnbr(10);
+	ft_putstr(" : ");
+	ft_putnbr(40);
+	if (ac < 2)
+		return (0);
+	tab = ft_strsplit(av[1], ' ');
+	ft_print_wtab(tab);
+	ft_wtabdel(tab);
 */
 }

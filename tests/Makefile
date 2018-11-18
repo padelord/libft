@@ -22,7 +22,7 @@ OBJ		=	$(SRC:.c=.o)
 
 LDFLAGS	=	-lft -L./..
 
-CFLAGS	=	-Wall -Wextra -I./../includes/ -g3
+CFLAGS	=	-Wall -Wextra -I./../includes/ -g3 `sdl-config --cflags --libs`
 
 $(NAME): all
 
