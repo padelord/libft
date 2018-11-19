@@ -6,7 +6,7 @@
 #    By: padelord <padelord@gmail.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/05 18:58:28 by padelord          #+#    #+#              #
-#    Updated: 2018/11/19 00:05:41 by padelord         ###   ########.fr        #
+#    Updated: 2018/11/19 08:27:01 by padelord         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -98,7 +98,7 @@ OBJS	=	$(SRCS:.c=.o)
 
 INCLUDE	=	includes/
 
-CFLAGS	=	-Wall -Wextra -Werror -I./$(INCLUDE) -g3
+CFLAGS	=	-Wall -Wextra -Werror -I./$(INCLUDE)
 
 all: $(NAME)
 

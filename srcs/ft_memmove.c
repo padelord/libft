@@ -6,7 +6,7 @@
 /*   By: padelord <padelord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 19:03:58 by padelord          #+#    #+#             */
-/*   Updated: 2018/11/10 21:24:32 by padelord         ###   ########.fr       */
+/*   Updated: 2018/11/19 02:09:02 by padelord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 			tdst[len] = tsrc[len];
 	}
 	else
-		dst = memcpy(dst, src, len);
+		dst = ft_memcpy(dst, src, len);
 	return (dst);
 }
