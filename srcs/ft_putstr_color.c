@@ -6,7 +6,7 @@
 /*   By: padelord <padelord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 23:58:46 by padelord          #+#    #+#             */
-/*   Updated: 2018/11/19 00:03:08 by padelord         ###   ########.fr       */
+/*   Updated: 2018/11/19 00:59:55 by padelord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_putstr_color(const char *str, const char *attr, const char *fg,
 {
 	char	buffer[39];
 
-	ft_bzero(buffer, 39);
+	buffer[0] = '\0';
 	ft_strcat(buffer, "\e[");
 	ft_strcat(buffer, attr);
 	ft_strcat(buffer, ";38;2;");

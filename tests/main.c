@@ -6,7 +6,7 @@
 /*   By: padelord <padelord@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 01:40:23 by padelord          #+#    #+#             */
-/*   Updated: 2018/11/12 00:12:16 by padelord         ###   ########.fr       */
+/*   Updated: 2018/11/19 01:09:52 by padelord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,29 +61,53 @@ void	ft_cursmove(size_t x, size_t y)
 	char	*buffer[25];
 
 	*buffer = 0;
-	ft_strcat((char *)buffer, "\033[");
+	ft_strcat((char *)buffer, "\e[");
 	ft_strcat((char *)buffer, ft_staticitoa(x));
 	ft_strcat((char *)buffer, ";");
 	ft_strcat((char *)buffer, ft_staticitoa(y));
-	ft_strcat((char *)buffer, "H");
+	ft_strcat((char *)buffer, "f");
 	ft_putstr((char *)buffer);
 }
 
 int	main(int ac, char **av)
 {
-	char	**tab;
-
 	t_vec3	point;
 
 	point = 0;
 	point.x = 1;
 	point.z = -1;
-	point *= 2;
+	ft_putendl("avant");
 	ft_putnbr(point.x);
 	ft_putchar('\n');
 	ft_putnbr(point.y);
 	ft_putchar('\n');
 	ft_putnbr(point.z);
+	ft_putchar('\n');
+	point *= 2;
+	ft_putendl("apres");
+	ft_putnbr(point.x);
+	ft_putchar('\n');
+	ft_putnbr(point.y);
+	ft_putchar('\n');
+	ft_putnbr(point.z);
+	ft_putchar('\n');
+	ft_termclr();
+	ft_cursmove(2, 2);
+	ft_putstr("\e[0;38;2;000;000;000;48;2;125;125;125;m");
+	ft_putnchar(' ', 42);
+	ft_putstr("\e[0;39;49m");
+	ft_cursmove(3, 2);
+	ft_putstr("\e[0;38;2;000;000;000;48;2;125;125;125;m");
+	ft_putchar(' ');
+	ft_putstr("\e[0;38;2;000;000;000;48;2;000;200;000;m");
+	ft_putnchar(' ', 40);
+	ft_putstr("\e[0;38;2;000;000;000;48;2;125;125;125;m");
+	ft_putchar(' ');
+	ft_putstr("\e[0;39;49m");
+	ft_cursmove(4, 2);
+	ft_putstr("\e[0;38;2;000;000;000;48;2;125;125;125;m");
+	ft_putnchar(' ', 42);
+	ft_putstr("\e[0;39;49m");
 	ft_putchar('\n');
 /*
 	ft_cursmove(10, 40);
@@ -92,6 +116,8 @@ int	main(int ac, char **av)
 	ft_putnbr(40);
 	if (ac < 2)
 		return (0);
+	char	**tab;
+
 	tab = ft_strsplit(av[1], ' ');
 	ft_print_wtab(tab);
 	ft_wtabdel(tab);

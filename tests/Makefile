@@ -6,7 +6,7 @@
 #    By: padelord <padelord@gmail.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/07 01:36:23 by padelord          #+#    #+#              #
-#    Updated: 2018/11/08 01:58:08 by padelord         ###   ########.fr        #
+#    Updated: 2018/11/19 02:30:37 by padelord         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -14,15 +14,14 @@ NAME	=	testlib
 
 CC	=	clang
 
-SRC		=	main.c	\
-			../wip/ft_putstr_color.c	\
-			strlcat.c
+SRC		=	test.c	\
+			srcs/ft_atoi.c
 
 OBJ		=	$(SRC:.c=.o)
 
 LDFLAGS	=	-lft -L./..
 
-CFLAGS	=	-Wall -Wextra -I./../includes/ -g3 `sdl-config --cflags --libs`
+CFLAGS	=	-Wall -Wextra -I./../includes/ -g3 
 
 $(NAME): all
 
