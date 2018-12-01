@@ -15,6 +15,7 @@
 
 void	ft_putendl(char const *str)
 {
-	ft_putstr(str);
-	ft_putchar('\n');
+  if (str)
+    write(1, str, ft_strlen(str));
+  ft_putchar('\n');
 }

@@ -10,16 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
 t_list	*ft_lstnew(void const *content, size_t content_size)
 {
 	t_list	*dest;
 
-	dest = (t_list *)ft_memalloc(sizeof(*dest));
-	if (!(dest->content = ft_memdup(content, content_size)))
-		return (0);
-	dest->content_size = content_size;
+	if (!(dest = (t_list *)ft_memalloc(sizeof(*dest))))
+	  return (0);
+	if (!content)
+	{
+	  if (!(dest->content = malloc(0)))
+	    return (0);
+	}
+	else
+	  if (!(dest->content = ft_memdup(content, content_size)))
+	    return (0);
+	dest->content_size = ((!content) ? 0 : content_size);
 	dest->next = 0;
 	return (dest);
 }

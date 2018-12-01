@@ -86,7 +86,8 @@ SRCBONUS=	ft_lstnew.c			\
 			ft_memdup.c			\
 			ft_min.c			\
 			ft_putnchar.c		\
-			ft_putnstr.c
+			ft_putnstr.c		\
+			ft_lstpback.c
 
 SRCNAME	=	$(SRCPART1)			\
 			$(SRCPART2)			\

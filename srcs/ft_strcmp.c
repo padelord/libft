@@ -15,9 +15,13 @@
 int		ft_strcmp(const char *s1, const char *s2)
 {
 	size_t	i;
+	unsigned char	*t1;
+	unsigned char	*t2;
 
+	t1 = (unsigned char *)s1;
+	t2 = (unsigned char *)s2;
 	i = 0;
-	while (s1[i] == s2[i] && s1[i])
+	while (t1[i] == t2[i] && t1[i])
 		i++;
-	return (s1[i] - s2[i]);
+	return (t1[i] - t2[i]);
 }

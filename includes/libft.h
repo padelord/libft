@@ -120,5 +120,6 @@ void	ft_wtabdel(char **tab);
 size_t	ft_min(size_t n1, size_t n2);
 void	ft_putnchar(char c, size_t len);
 void	ft_putnstr(const char *str, size_t n);
+void	ft_lstpback(t_list **alst, t_list *new);
 
 #endif

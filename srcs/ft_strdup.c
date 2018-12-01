@@ -14,5 +14,8 @@
 
 char	*ft_strdup(const char *s1)
 {
-	return (ft_strcpy(ft_strnew(ft_strlen(s1)), s1));
+  char	*s;
+
+  s = ft_strnew(ft_strlen(s1));
+return ((s == 0) ? 0 : ft_strcpy(s, s1));
 }

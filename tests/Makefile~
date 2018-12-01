@@ -28,7 +28,7 @@ all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME) -L./../libft/ -lft
 
 lib:
-	make -C ../libft/
+	make re -C ../libft/
 	make
 
 clean: 

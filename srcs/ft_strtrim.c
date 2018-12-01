@@ -14,24 +14,18 @@
 
 char	*ft_strtrim(char const *s)
 {
-	size_t		i;
 	size_t		size;
 	char		*dest;
 
 	while (*s && ft_iswspace(*s))
 		s++;
-	size = ft_strlen(s);
-	i = 1;
-	while (ft_iswspace(s[size - i]))
-		i++;
-	size -= i;
+	if ((size = ft_strlen(s)) == 0)
+	  return (ft_strnew(0));
+	while (ft_iswspace(*(s + (--size))))
+	  ;
+	size++;
 	if (!(dest = ft_strnew(size)))
 		return (0);
-	i = 0;
-	while (s[i] && i < size)
-	{
-		dest[i] = s[i];
-		i++;
-	}
+	ft_strncpy(dest, s, size);
 	return (dest);
 }

@@ -22,7 +22,7 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	{
 		if (!(new = f(lst)))
 			return (0);
-		ft_lstadd(&dest, new);
+		ft_lstpback(&dest, new);
 		lst = lst->next;
 	}
 	return (dest);
