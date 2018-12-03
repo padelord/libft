@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: padelord <padelord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/18 23:27:10 by padelord          #+#    #+#             */
-/*   Updated: 2018/11/18 23:27:11 by padelord         ###   ########.fr       */
+/*   Created: 2018/11/07 00:57:22 by padelord          #+#    #+#             */
+/*   Updated: 2018/12/03 00:03:35 by padelord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+int		ft_atoi(const char *str)
 {
-	t_list	*new;
-	t_list	*dest;
+	size_t			i;
+	int				sign;
+	unsigned int	nb;
 
-	dest = 0;
-	while (lst)
+	i = 0;
+	while (str[i] && ft_isspace(str[i]))
+		i++;
+	sign = 1;
+	if (str[i] == '-' || str[i] == '+')
+		sign = 44 - str[i++];
+	nb = 0;
+	while (str[i] && ft_isdigit(str[i]))
 	{
-		if (!(new = f(lst)))
-			return (0);
-		ft_lstpback(&dest, new);
-		lst = lst->next;
+		nb *= 10;
+		nb += str[i] - '0';
+		i++;
 	}
-	return (dest);
+	return ((int)(nb * sign));
 }

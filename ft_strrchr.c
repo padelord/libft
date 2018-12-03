@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: padelord <padelord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/10 20:12:31 by padelord          #+#    #+#             */
-/*   Updated: 2018/11/18 23:32:31 by padelord         ###   ########.fr       */
+/*   Created: 2018/11/18 23:30:43 by padelord          #+#    #+#             */
+/*   Updated: 2018/12/03 03:34:25 by padelord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-t_list	*ft_lstnew(void const *content, size_t content_size)
+char	*ft_strrchr(const char *s, int c)
 {
-	t_list	*dest;
+	size_t	i;
 
-	if (!(dest = (t_list *)ft_memalloc(sizeof(*dest))))
-	  return (0);
-	if (!content)
+	i = ft_strlen(s) + 1;
+	while (i-- > 0)
 	{
-	  if (!(dest->content = malloc(0)))
-	    return (0);
+		if ((unsigned char)(s[i]) == c)
+			return ((char *)(s + i));
 	}
-	else
-	  if (!(dest->content = ft_memdup(content, content_size)))
-	    return (0);
-	dest->content_size = ((!content) ? 0 : content_size);
-	dest->next = 0;
-	return (dest);
+	return (0);
 }

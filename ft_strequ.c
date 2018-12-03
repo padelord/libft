@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: padelord <padelord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/18 23:29:04 by padelord          #+#    #+#             */
-/*   Updated: 2018/11/18 23:29:06 by padelord         ###   ########.fr       */
+/*   Created: 2018/11/18 23:29:22 by padelord          #+#    #+#             */
+/*   Updated: 2018/12/03 00:42:50 by padelord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strclr(char *str)
+int		ft_strequ(char const *s1, char const *s2)
 {
-	ft_bzero((void *)str, ft_strlen(str));
+	if (s1 && s2)
+		if (ft_strcmp(s1, s2) == 0)
+			return (1);
+	return (0);
 }

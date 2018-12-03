@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: padelord <padelord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/08 00:23:50 by padelord          #+#    #+#             */
-/*   Updated: 2018/11/19 03:56:45 by padelord         ###   ########.fr       */
+/*   Created: 2018/11/06 23:42:39 by padelord          #+#    #+#             */
+/*   Updated: 2018/12/03 03:32:58 by padelord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+void	ft_putstr(char const *str)
 {
-  char	*s;
-
-  s = ft_strnew(ft_strlen(s1));
-return ((s == 0) ? 0 : ft_strcpy(s, s1));
+	if (str)
+		write(1, str, ft_strlen(str));
 }

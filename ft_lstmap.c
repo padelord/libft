@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: padelord <padelord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/18 23:31:07 by padelord          #+#    #+#             */
-/*   Updated: 2018/11/18 23:51:02 by padelord         ###   ########.fr       */
+/*   Created: 2018/11/18 23:27:10 by padelord          #+#    #+#             */
+/*   Updated: 2018/12/02 23:59:10 by padelord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strstr(const char *haystack, const char *needle)
+t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	size_t	i;
-	size_t	len;
+	t_list	*new;
+	t_list	*dest;
 
-	len = ft_strlen(needle);
-	if (len > ft_strlen(haystack))
-		return (0);
-	if (len == 0)
-	  return ((char *)haystack);
-	i = 0;
-	while (haystack[i])
+	dest = 0;
+	while (lst)
 	{
-	  if (ft_strncmp(haystack + i, needle, len) == 0)
-	    return ((char *)(haystack + i));
-	  i++;
+		if (!(new = f(lst)))
+			return (0);
+		ft_lstpback(&dest, new);
+		lst = lst->next;
 	}
-	return (0);
+	return (dest);
 }

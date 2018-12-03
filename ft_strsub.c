@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: padelord <padelord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/18 23:30:02 by padelord          #+#    #+#             */
-/*   Updated: 2018/11/18 23:47:08 by padelord         ###   ########.fr       */
+/*   Created: 2018/11/18 23:31:11 by padelord          #+#    #+#             */
+/*   Updated: 2018/12/03 00:43:59 by padelord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
 	char	*dest;
+	size_t	size;
+	size_t	i;
 
-	if (!(dest = ft_strnew(ft_strlen(s))))
+	if (!s)
+		return (0);
+	size = ft_strlen(s);
+	if (start >= size || size < len)
+		return (0);
+	if (!(dest = ft_strnew(ft_min(size - start, len))))
 		return (0);
 	i = 0;
-	while (s[i])
+	while (s[start + i] && i < len)
 	{
-		dest[i] = f(i, s[i]);
+		dest[i] = s[start + i];
 		i++;
 	}
 	return (dest);

@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: padelord <padelord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/06 23:42:39 by padelord          #+#    #+#             */
-/*   Updated: 2018/11/08 03:44:29 by padelord         ###   ########.fr       */
+/*   Created: 2018/11/18 23:29:04 by padelord          #+#    #+#             */
+/*   Updated: 2018/12/03 00:34:09 by padelord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
-void	ft_putstr(char const *str)
+void	ft_strclr(char *str)
 {
-  if (str)
-	write(1, str, ft_strlen(str));
+	if (str)
+		ft_bzero((void *)str, ft_strlen(str));
 }

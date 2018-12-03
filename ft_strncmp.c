@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: padelord <padelord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/18 23:30:43 by padelord          #+#    #+#             */
-/*   Updated: 2018/11/18 23:47:51 by padelord         ###   ########.fr       */
+/*   Created: 2018/11/18 23:30:10 by padelord          #+#    #+#             */
+/*   Updated: 2018/12/03 03:36:47 by padelord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	*t1;
+	unsigned char	*t2;
 
-	i = ft_strlen(s) + 1;
-	while (i-- > 0)
-	{
-		if ((unsigned char)(s[i]) == c)
-		  return ((char *)(s + i));
-	}
-	return (0);
+	if (n == 0)
+		return (0);
+	t1 = (unsigned char *)s1;
+	t2 = (unsigned char *)s2;
+	i = 0;
+	while (i < n - 1 && t1[i] == t2[i] && t1[i])
+		i++;
+	return (t1[i] - t2[i]);
 }

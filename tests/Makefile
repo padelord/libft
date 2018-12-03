@@ -6,13 +6,13 @@
 #    By: padelord <padelord@gmail.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/07 01:36:23 by padelord          #+#    #+#              #
-#    Updated: 2018/11/19 02:30:37 by padelord         ###   ########.fr        #
+#    Updated: 2018/12/03 00:09:32 by padelord         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME	=	testlib
 
-CC	=	clang
+CC	=	gcc
 
 SRC		=	test.c
 

@@ -6,7 +6,7 @@
 #    By: padelord <padelord@gmail.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/05 18:58:28 by padelord          #+#    #+#              #
-#    Updated: 2018/11/19 08:27:01 by padelord         ###   ########.fr        #
+#    Updated: 2018/12/03 04:06:44 by padelord         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -14,7 +14,7 @@ NAME	=	libft.a
 
 CC	=	gcc
 
-SRCPATH	=	srcs/
+SRCPATH	=	./
 
 SRCPART1=	ft_memset.c			\
 			ft_bzero.c			\
@@ -97,13 +97,11 @@ SRCS	=	$(addprefix $(SRCPATH), $(SRCNAME))
 
 OBJS	=	$(SRCS:.c=.o)
 
-INCLUDE	=	includes/
-
-CFLAGS	=	-Wall -Wextra -Werror -I./$(INCLUDE)
+CFLAGS	=	-Wall -Wextra -Werror -I./
 
 all: $(NAME)
 
-$(NAME): $(OBJS) 
+$(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
 

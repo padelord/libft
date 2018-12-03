@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strequ.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: padelord <padelord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/18 23:29:22 by padelord          #+#    #+#             */
-/*   Updated: 2018/11/18 23:29:23 by padelord         ###   ########.fr       */
+/*   Created: 2018/11/18 23:30:39 by padelord          #+#    #+#             */
+/*   Updated: 2018/12/03 03:34:40 by padelord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strequ(char const *s1, char const *s2)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	if (ft_strcmp(s1, s2) == 0)
-		return (1);
+	size_t	n_len;
+
+	n_len = ft_strlen(needle);
+	if (n_len == 0)
+		return ((char *)haystack);
+	if (n_len > ft_strlen(haystack) || n_len > len)
+		return (0);
+	while (*(haystack + n_len - 1) && len >= n_len)
+	{
+		if (ft_strncmp(haystack, needle, n_len) == 0)
+			return ((char *)haystack);
+		haystack++;
+		len--;
+	}
 	return (0);
 }

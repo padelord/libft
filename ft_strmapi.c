@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: padelord <padelord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/06 23:49:12 by padelord          #+#    #+#             */
-/*   Updated: 2018/11/08 03:40:31 by padelord         ###   ########.fr       */
+/*   Created: 2018/11/18 23:30:02 by padelord          #+#    #+#             */
+/*   Updated: 2018/12/03 00:42:08 by padelord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
-void	ft_putendl_fd(char const *str, int fd)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-  if (str)
-    write(fd, str, ft_strlen(str));
-  write(fd, "\n", 1);
+	size_t	i;
+	char	*dest;
+
+	if (!f || !(dest = ft_strnew(ft_strlen(s))))
+		return (0);
+	i = 0;
+	while (s[i])
+	{
+		dest[i] = f(i, s[i]);
+		i++;
+	}
+	return (dest);
 }
