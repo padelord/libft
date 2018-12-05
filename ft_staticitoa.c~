@@ -18,11 +18,9 @@ char	*ft_staticitoa(int nb)
 	size_t			i;
 	unsigned int	n;
 
-	dest[11] = '\0';
+	dest[11] = 0;
 	n = ((nb < 0) ? -nb : nb);
 	i = 10;
-	if (nb == 0)
-		dest[i--] = '0';
 	while (n > 0)
 	{
 		dest[i--] = n % 10 + '0';
@@ -30,5 +28,27 @@ char	*ft_staticitoa(int nb)
 	}
 	if (nb < 0)
 		dest[i--] = '-';
+	if (nb == 0)
+		dest[i--] = '0';
 	return (dest + i + 1);
 }
+  /*
+	static char		dest[12];
+	size_t			i;
+	unsigned int	n;
+
+	n = ((nb < 0) ? -nb : nb);
+	i = 0;
+	while (n > 0)
+	{
+		dest[i++] = n % 10 + '0';
+		n /= 10;
+	}
+	if (nb < 0)
+		dest[i++] = '-';
+	if (nb == 0)
+		dest[i++] = '0';
+	dest[i] = '\0';
+	return (ft_strrev(dest));
+}
+  */
