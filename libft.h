@@ -6,7 +6,7 @@
 /*   By: padelord <padelord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/08 02:53:09 by padelord          #+#    #+#             */
-/*   Updated: 2018/11/19 07:01:31 by padelord         ###   ########.fr       */
+/*   Updated: 2018/12/06 19:43:46 by padelord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,7 @@
 # define C_YELLOW "255;255;0"
 # define C_PINK "255;0;255"
 # define C_CYAN "0;255;255"
-# define C_RANDOM "0;255;255"
-# define C_GUIRODRI "5;1;119"
+# define C_GRAY "100;100;100;"
 
 # define C_RESET "0"
 # define C_BOLD "1"
@@ -122,5 +121,6 @@ void	ft_putnchar(char c, size_t len);
 void	ft_putnstr(const char *str, size_t n);
 void	ft_lstpback(t_list **alst, t_list *new);
 void	ft_putnbrendl(int nb);
+void	ft_putwordtab(char **tab);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: padelord <padelord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 20:28:34 by padelord          #+#    #+#             */
-/*   Updated: 2018/11/18 23:48:05 by padelord         ###   ########.fr       */
+/*   Updated: 2018/12/06 14:55:45 by padelord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strrev(char *str)
 	size_t	i;
 
 	if (!str)
-	  return (0);
+		return (0);
 	len = ft_strlen(str) - 1;
 	i = 0;
 	while (i < len)

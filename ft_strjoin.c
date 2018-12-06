@@ -6,7 +6,7 @@
 /*   By: padelord <padelord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 21:32:12 by padelord          #+#    #+#             */
-/*   Updated: 2018/11/10 23:30:26 by padelord         ###   ########.fr       */
+/*   Updated: 2018/12/06 19:24:55 by padelord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*dest;
 	size_t	len;
 
-	if (!s1 || !s2)
+	if (!s1 && s2)
+		return (ft_strdup(s2));
+	else if (s1 && !s2)
+		return (ft_strdup(s1));
+	else if (!s1 && !s2)
 		return (0);
 	len = ft_strlen(s1);
 	if (!(dest = ft_strnew(len + ft_strlen(s2))))

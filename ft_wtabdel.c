@@ -1,23 +1,32 @@
-/* PART I */
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_wtabdel.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: padelord <padelord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/08 00:27:27 by padelord          #+#    #+#             */
-/*   Updated: 2018/11/19 00:11:59 by padelord         ###   ########.fr       */
+/*   Created: 2018/12/06 15:05:32 by padelord          #+#    #+#             */
+/*   Updated: 2018/12/06 15:18:22 by padelord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strcpy(char *dst, const char *src);
-/*
+void	ft_wtabdel(char **tab)
 {
-	if (!src || !dst)
-		return (0);
-	return ((char *)ft_memcpy(dst, src, ft_strlen(src) + 1));
+	size_t	i;
+
+	if (tab)
+	{
+		i = 0;
+		while (tab[i])
+		{
+			free(tab[i]);
+			tab[i] = 0;
+			i++;
+		}
+		free(tab);
+		tab = 0;
+	}
 }
-*/
