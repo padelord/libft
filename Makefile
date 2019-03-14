@@ -3,7 +3,7 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: padelord <padelord@gmail.com>              +#+  +:+       +#+         #
+#    By: padelord <padelord@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/05 18:58:28 by padelord          #+#    #+#              #
 #    Updated: 2018/12/06 17:03:52 by padelord         ###   ########.fr        #
@@ -90,7 +90,10 @@ SRCBONUS=	ft_lstnew.c			\
 			ft_lstpback.c		\
 			ft_putnbrendl.c		\
 			ft_wtabdel.c		\
-			ft_putwordtab.c
+			ft_putwordtab.c		\
+			ft_lstgetsize.c		\
+			ft_lsttostr.c		\
+			ft_displstr.c
 
 SRCNAME	=	$(SRCPART1)			\
 			$(SRCPART2)			\
@@ -102,11 +105,16 @@ OBJS	=	$(SRCS:.c=.o)
 
 CFLAGS	=	-Wall -Wextra -Werror -I./
 
+HEADERS = libft.h
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
+
+%.o: %.c $(HEADERS)
+	$(CC) $(CFLAGS) -o $@ -c $<
 
 clean:
 	rm -f $(OBJS)

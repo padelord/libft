@@ -11,7 +11,16 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
+void	*ft_longmemmove(long *dst, const long *src, size_t len)
+{
+	while (len--)
+	{
+		dst[len] = src[len];
+	}
+	return ((void *)src);
+}
+*/
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	unsigned char	*tdst;
@@ -23,6 +32,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		return (0);
 	if (src < dst && src + len > dst)
 	{
+//		src = ft_longmemmove((long*)dst, (long*)src, len >> 3);
+//		len = len & 0b00000000000000000000000000000111;
 		while (len-- > 0)
 			tdst[len] = tsrc[len];
 	}

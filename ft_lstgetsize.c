@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel.c                                        :+:      :+:    :+:   */
+/*   ft_lstgetsize.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: padelord <padelord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/18 23:26:43 by padelord          #+#    #+#             */
-/*   Updated: 2018/11/18 23:26:47 by padelord         ###   ########.fr       */
+/*   Created: 2019/02/08 21:57:14 by padelord          #+#    #+#             */
+/*   Updated: 2019/02/08 21:57:17 by padelord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
+size_t		ft_lstgetsize(t_list *lst)
 {
-	if (!*alst)
-		return ;
-	ft_lstdel(&((*alst)->next), del);
-	ft_lstdelone(alst, del);
+	size_t	size;
+
+	size = 0;
+	while (lst)
+	{
+		size += lst->content_size;
+		lst = lst->next;
+	}
+	return (size);
 }

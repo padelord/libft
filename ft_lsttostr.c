@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel.c                                        :+:      :+:    :+:   */
+/*   ft_lsttostr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: padelord <padelord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/18 23:26:43 by padelord          #+#    #+#             */
-/*   Updated: 2018/11/18 23:26:47 by padelord         ###   ########.fr       */
+/*   Created: 2019/02/08 21:57:43 by padelord          #+#    #+#             */
+/*   Updated: 2019/02/08 21:57:45 by padelord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
+char	*ft_lsttostr(t_list *lst)
 {
-	if (!*alst)
-		return ;
-	ft_lstdel(&((*alst)->next), del);
-	ft_lstdelone(alst, del);
+	char	*line;
+	size_t	size;
+
+	if (!lst)
+		return (NULL);
+	size = ft_lstgetsize(lst);
+	if (!(line = ft_strnew(size)))
+		return (NULL);
+	line[size] = '\0';
+	while (lst)
+	{
+		size -= lst->content_size;
+		ft_memcpy(line + size, lst->content, lst->content_size);
+		lst = lst->next;
+	}
+	return (line);
 }

@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel.c                                        :+:      :+:    :+:   */
+/*   ft_displstr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: padelord <padelord@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/18 23:26:43 by padelord          #+#    #+#             */
-/*   Updated: 2018/11/18 23:26:47 by padelord         ###   ########.fr       */
+/*   Created: 2019/02/08 21:56:30 by padelord          #+#    #+#             */
+/*   Updated: 2019/02/08 21:56:55 by padelord         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "libft.h"
 
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
+void	ft_displstr(t_list *lst)
 {
-	if (!*alst)
+	if (!lst)
 		return ;
-	ft_lstdel(&((*alst)->next), del);
-	ft_lstdelone(alst, del);
+	ft_displstr(lst->next);
+	write(1, lst->content, lst->content_size);
 }

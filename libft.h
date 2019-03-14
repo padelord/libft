@@ -15,18 +15,23 @@
 
 # include <string.h>
 
-# define BUFF_SIZE 32
+# ifndef BUFF_SIZE
+#  define BUFF_SIZE 256
+# endif
+# ifndef SIZEOF_LL
+#  define SIZEOF_LL sizeof(long long)
+# endif
 
-# define C_BLACK "0;0;0"
-# define C_WHITE "255;255;255"
-# define C_RED "255;0;0"
-# define C_GREEN "0;255;0"
-# define C_BLUE "0;0;255"
-# define C_GIRLY "255;125;200"
-# define C_YELLOW "255;255;0"
-# define C_PINK "255;0;255"
-# define C_CYAN "0;255;255"
-# define C_GRAY "100;100;100;"
+# define C_BLACK	"000;000;000"
+# define C_WHITE	"255;255;255"
+# define C_RED		"255;000;000"
+# define C_GREEN	"000;160;000"
+# define C_BLUE		"000;000;255"
+# define C_GIRLY	"255;125;200"
+# define C_YELLOW	"255;255;000"
+# define C_PINK		"255;000;255"
+# define C_CYAN		"000;255;255"
+# define C_GRAY		"100;100;100"
 
 # define C_RESET "0"
 # define C_BOLD "1"
@@ -108,6 +113,8 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int		ft_isspace(int c);
 void	ft_putstr_color(const char *str, const char *attr, const char *fg,
 						const char *bg);
+void	ft_putchar_color(const char c, const char *attr, const char *fg,
+						 const char *bg);
 void	ft_putendl_color(const char *str, const char *attr, const char *fg,
 						const char *bg);
 void	ft_cswap(char *a, char *b);
@@ -122,5 +129,8 @@ void	ft_putnstr(const char *str, size_t n);
 void	ft_lstpback(t_list **alst, t_list *new);
 void	ft_putnbrendl(int nb);
 void	ft_putwordtab(char **tab);
+size_t	ft_lstgetsize(t_list *lst);
+char	*ft_lsttostr(t_list *lst);
+void	ft_displstr(t_list *lst);
 
 #endif
